@@ -29,7 +29,7 @@ fox_news
 
 foxnews_plot <- fox_news |>
   
-  ggplot(data = fox_news, mapping = aes(x = gopvoteshare2000, y = subrf2000,)) + geom_point() + labs(x = "Percent of those that voted the GOP party", y = "Share of ")
+  ggplot(data = fox_news, mapping = aes(x = gopvoteshare2000, y = subrf2000,)) + geom_point() + labs(x = "Percent of those that voted the GOP party", y = "Share of those who had FOX news subscriptions")
 foxnews_plot
 ```
 
