@@ -22,6 +22,7 @@ Have you ever wondered how national news coverage affects elections? I plan to e
 
 
 ```{r}
+
 library(tidyverse)
 library(readr)
 fox_news <- read_csv("foxnews.csv")
@@ -31,5 +32,13 @@ foxnews_plot <- fox_news |>
   ggplot(data = fox_news, mapping = aes(x = gopvoteshare2000, y = subrf2000,)) + geom_point(position = "dodge") + labs(x = "Percent of those that voted the GOP party in 2020", y = "Share of those who had FOX news subscriptions")
 foxnews_plot
 ```
+-- make an ayasis of the graph
 
+
+```{r}
+fox_news_plot_2 <- fox_news |>
+  ggplot(data = fox_news, mapping = aes(x = gopvoteshare1996, y = subrf2000,)) + geom_point(position = "dodge") + labs(x = "Percent of those that voted the GOP party in 2020", y = "Share of those who had FOX news subscriptions")
+fox_news_plot_2
+```
+From the scatter plot it is seen that with fox news the percentage that voted gop increased.
 
