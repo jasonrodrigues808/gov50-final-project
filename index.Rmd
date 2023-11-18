@@ -41,4 +41,4 @@ fox_news_plot_2 <- fox_news |>
 fox_news_plot_2
 ```
 From the scatter plot it is seen that with fox news the percentage that voted gop increased.
-
+j
