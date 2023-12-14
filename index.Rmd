@@ -1,7 +1,7 @@
 ---
 title: "Gov 50 Final Project"
 author: "Jason Rodrigues"
-description: "Anaysis of what happens when to electorates behavior when Fox News is Introduced"
+description: "Anaysis of what happens  to electorates behavior when Fox News is Introduced"
 output:
   distill::distill_article:
     self_contained: false
@@ -111,7 +111,7 @@ modelsummary::modelsummary(fox_news_main_regression)
 
 ```
 
-##Conclusion
+## Conclusion
 
 To summarize the data that I analyzed for this protection, I would like to revisit my hypothesis(look above in the introduction) and proclaim that I was correct. I said that media does have an effect on electorates behavior, and looking at the data, there sure is. Casual relationship. If you look at more than the scatter plots alone, then a relationship between a shift rightward and the implementation of Fox News is established. In my analysis of my graphs, I looked at the positive relationship between the increase in GOP share and the share of the population that subscribes to Fox News, which was not my hypothesis--rather, it was an interpretation of independent and dependent variables. I was testing if, over time, electorates' behavior changed due to the media, which, with the ATE table, established that voters got more conservative over time and voted for the GOP. There are a few limitations to my project. The first is that since there are so many points, they are not named, so I cannot see the direct change that the voting share changed over time on the 2000 scatter plot. The second limitation of my project is that I did not account for any omitted factors. This means that I did not adjust my data or my conclusion or graphs on any political events that happened in the four-year difference from when the data was taken. This data set, and even I ignore this factor. For instance, a stark political event could have happened that caused towns to shift rightward. If I had more time, I would have done outside research to see if there were any omitted variables that could have contributed to the shift. Moreover, if I had more time, I would have filtered my data set so that only 400 points showed instead of a thousand. I would want to do that because it will make it easier to read, and then I could label the points so that we can see the change in the voting share for the GOP over time. 
 
