@@ -1498,8 +1498,6 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
   <!--/radix_placeholder_distill-->
   <script src="index_files/header-attrs-2.24/header-attrs.js"></script>
-  <script src="index_files/kePrint-0.0.1/kePrint.js"></script>
-  <link href="index_files/lightable-0.0.1/lightable.css" rel="stylesheet" />
   <script src="index_files/jquery-3.6.0/jquery-3.6.0.min.js"></script>
   <script src="index_files/popper-2.6.0/popper.min.js"></script>
   <link href="index_files/tippy-6.2.7/tippy.css" rel="stylesheet" />
@@ -1592,127 +1590,49 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <h2 id="main-regression">Main Regression</h2>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>fox_news_main_regression</span> <span class='op'>&lt;-</span> </span>
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://broom.tidymodels.org/'>broom</a></span><span class='op'>)</span></span>
+<span><span class='va'>fox_news_main_regression</span> <span class='op'>&lt;-</span> </span>
 <span><span class='fu'><a href='https://rdrr.io/r/stats/lm.html'>lm</a></span><span class='op'>(</span><span class='va'>subrf2000</span> <span class='op'>~</span> <span class='va'>gopvoteshare1996</span> <span class='op'>+</span> <span class='va'>gopvoteshare2000</span>, data <span class='op'>=</span> <span class='va'>fox_news</span><span class='op'>)</span></span>
 <span></span>
-<span></span>
-<span><span class='fu'>modelsummary</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/modelsummary/man/modelsummary.html'>modelsummary</a></span><span class='op'>(</span><span class='va'>fox_news_main_regression</span><span class='op'>)</span></span></code></pre>
+<span><span class='fu'><a href='https://generics.r-lib.org/reference/tidy.html'>tidy</a></span><span class='op'>(</span><span class='va'>fox_news_main_regression</span><span class='op'>)</span> <span class='op'>|&gt;</span></span>
+<span><span class='fu'>knitr</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/knitr/man/kable.html'>kable</a></span><span class='op'>(</span>digits <span class='op'>=</span> <span class='fl'>3</span><span class='op'>)</span></span></code></pre>
 </div>
-<table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<table>
 <thead>
-<tr>
-<th style="text-align:left;">
-</th>
-<th style="text-align:center;">
- (1)
-</th>
+<tr class="header">
+<th style="text-align: left;">term</th>
+<th style="text-align: right;">estimate</th>
+<th style="text-align: right;">std.error</th>
+<th style="text-align: right;">statistic</th>
+<th style="text-align: right;">p.value</th>
 </tr>
 </thead>
 <tbody>
-<tr>
-<td style="text-align:left;">
-(Intercept)
-</td>
-<td style="text-align:center;">
-0.083
-</td>
+<tr class="odd">
+<td style="text-align: left;">(Intercept)</td>
+<td style="text-align: right;">0.083</td>
+<td style="text-align: right;">0.007</td>
+<td style="text-align: right;">12.355</td>
+<td style="text-align: right;">0</td>
 </tr>
-<tr>
-<td style="text-align:left;">
-</td>
-<td style="text-align:center;">
-(0.007)
-</td>
+<tr class="even">
+<td style="text-align: left;">gopvoteshare1996</td>
+<td style="text-align: right;">0.312</td>
+<td style="text-align: right;">0.030</td>
+<td style="text-align: right;">10.408</td>
+<td style="text-align: right;">0</td>
 </tr>
-<tr>
-<td style="text-align:left;">
-gopvoteshare1996
-</td>
-<td style="text-align:center;">
-0.312
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-</td>
-<td style="text-align:center;">
-(0.030)
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-gopvoteshare2000
-</td>
-<td style="text-align:center;">
-−0.301
-</td>
-</tr>
-<tr>
-<td style="text-align:left;box-shadow: 0px 1.5px">
-</td>
-<td style="text-align:center;box-shadow: 0px 1.5px">
-(0.029)
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Num.Obs.
-</td>
-<td style="text-align:center;">
-9795
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-R2
-</td>
-<td style="text-align:center;">
-0.011
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-R2 Adj.
-</td>
-<td style="text-align:center;">
-0.011
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-AIC
-</td>
-<td style="text-align:center;">
-−8629.7
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-BIC
-</td>
-<td style="text-align:center;">
-−8601.0
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Log.Lik.
-</td>
-<td style="text-align:center;">
-4318.862
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-RMSE
-</td>
-<td style="text-align:center;">
-0.16
-</td>
+<tr class="odd">
+<td style="text-align: left;">gopvoteshare2000</td>
+<td style="text-align: right;">-0.301</td>
+<td style="text-align: right;">0.029</td>
+<td style="text-align: right;">-10.401</td>
+<td style="text-align: right;">0</td>
 </tr>
 </tbody>
 </table>
 </div>
+<p>This regression indicates that the coefficient, or the intercept, is 0.083. This means that with the implementation of Fox News, there was an increase of 0.083 in the percentage share of those in the town that voted GOP compared to towns that did not get Fox News. It is statistically significant at the test level of a = 0.005. We should interpret this casually. Since the p-value is 0, we would reject the null hypothesis that there is no association between Fox News subscriptions and GOP share increase.</p>
 <h2 id="conclusion">Conclusion</h2>
 <p>To summarize the data that I analyzed for this protection, I would like to revisit my hypothesis(look above in the introduction) and proclaim that I was correct. I said that media does have an effect on electorates behavior, and looking at the data, there sure is. Casual relationship. If you look at more than the scatter plots alone, then a relationship between a shift rightward and the implementation of Fox News is established. In my analysis of my graphs, I looked at the positive relationship between the increase in GOP share and the share of the population that subscribes to Fox News, which was not my hypothesis–rather, it was an interpretation of independent and dependent variables. I was testing if, over time, electorates’ behavior changed due to the media, which, with the ATE table, established that voters got more conservative over time and voted for the GOP. There are a few limitations to my project. The first is that since there are so many points, they are not named, so I cannot see the direct change that the voting share changed over time on the 2000 scatter plot. The second limitation of my project is that I did not account for any omitted factors. This means that I did not adjust my data or my conclusion or graphs on any political events that happened in the four-year difference from when the data was taken. This data set, and even I ignore this factor. For instance, a stark political event could have happened that caused towns to shift rightward. If I had more time, I would have done outside research to see if there were any omitted variables that could have contributed to the shift. Moreover, if I had more time, I would have filtered my data set so that only 400 points showed instead of a thousand. I would want to do that because it will make it easier to read, and then I could label the points so that we can see the change in the voting share for the GOP over time.</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
