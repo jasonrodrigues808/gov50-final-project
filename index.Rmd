@@ -12,6 +12,7 @@ output:
 ## Introduction
 
   Have you ever wondered how national news coverage affects elections? This question instigated me to investigate the correlation between national news coverage and which political party electorates vote. To uncover the conclusion, I plan to examine how media coverage affects the electorate's behavior in this study. National news media coverage will likely substantially influence the electorate's behavior. I affirm this hypothesis because most citizens believe everything they get from news sources. By believing the information, they are adopting the same political beliefs as the news source, ultimately shifting the election's outcome. News sources can also push political propaganda by telling one side of a story, which electorates sympathize with and conform to the propaganda the sources are trying to push. However, this acutely insinuates that all news sources are bad, which is incredibly untrue. It can shine a light on candidates' ideals or actions, changing how electorates view the candidate they support. The type of news the electorates are watching is what primarily matters in this case due to the fact that news opinions and what is being shown varies among different news channels. To complete this analysis and hopefully uncover a clear answer, I decided to use electorate data from Fox News.
+  
 ## The Data
 
    Fox News, if you did not already know, is a conservative media source that projects right-leaning opinion and news. Due to this, it makes it almost the perfect news station to investigate because since it clearly supports a side and the type of media it is going to project, I can use it for the project due to the fact I do not need to infer the opinion of Fox News. Also, the fact that this data set, in particular, only measures how their media affected the share of the town's population that voted for the GOP insinuates they will project conservative opinions and news--ultimately favoring the GOP. 
@@ -101,15 +102,20 @@ This table is the ATE table. ATE stands for Average Treatment Affect. This metho
 
 
 ```{r}
+library(broom)
 fox_news_main_regression <- 
 lm(subrf2000 ~ gopvoteshare1996 + gopvoteshare2000, data = fox_news)
 
+tidy(fox_news_main_regression) |>
+knitr::kable(digits = 3)
 
-modelsummary::modelsummary(fox_news_main_regression)
 
 
 
 ```
+
+This regression indicates that the coefficient, or the intercept, is  0.083. This means that with the implementation of Fox News, there was an increase of 0.083 in the percentage share of those in the town that voted GOP compared to towns that did not get Fox News. It is statistically significant at the test level of a = 0.005. We should interpret this casually. Since the p-value is 0, we would reject the null hypothesis that there is no association between Fox News subscriptions and GOP share increase.
+
 
 ## Conclusion
 
